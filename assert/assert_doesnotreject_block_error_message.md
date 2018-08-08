@@ -11,6 +11,8 @@ added: v10.0.0
 如果该函数没有返回一个 promise，则 `assert.doesNotReject()` 会返回一个被 reject 的 `Promise` 并传入 [`ERR_INVALID_RETURN_VALUE`] 错误。
 以上两种情况都会跳过错误处理函数。
 
+值得注意的是，使用`assert.doesNotReject()`实际上没有什么用，因为通过捕获拒绝然后再次拒绝它几乎没有什么好处。相反，请考虑在不应产生拒绝的特定代码路径旁边添加注释，并尽可能去表达出错误消息。
+
 `error` 可以是 [`Class`]、[`RegExp`] 或校验函数。
 详见 [`assert.throws()`]。
 
